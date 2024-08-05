@@ -19,7 +19,8 @@
       position: relative;
 
       @media screen and ($breakpoint-small <= width < $breakpoint-large) {
-        grid-column: span $grid-columns-medium;
+        // grid-column: span $grid-columns-medium;
+        grid-column: span 3;
         grid-template-columns: subgrid;
 
         // for medium screen, each column item will take half of the available cols from the parent grid
@@ -29,7 +30,7 @@
 
         // for medium screen, position the first column item on the left of the grid
         .p-equal-height-row__item:first-child {
-          grid-row: span 100; // this needs to be sufficiently large so remaining column items won't get stretched
+          // grid-row: span 100; // this needs to be sufficiently large so remaining column items won't get stretched
         }
       }
 
