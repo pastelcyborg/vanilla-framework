@@ -1,12 +1,12 @@
 {% extends "_layouts/examples.html" %}
-{% from "_macros/tiered-list.jinja" import tiered_list %}
+{% from "_macros/equal-heights-new.jinja" import equal_heights_new %}
 
 {% block title %}Tiered list / 50/50 on desktop with description{% endblock %}
 
 {% block standalone_css %}patterns_all{% endblock %}
 
 {% block content %}
-{%- call(slot) tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+{%- call(slot) equal_heights_new() -%}
   {%- if slot == 'title' -%}
     <h2>H2 - up to two lines; ideally one.</h2>
   {%- endif -%}
@@ -81,4 +81,6 @@
     <a href="#">Contact us ›</a>
   {%- endif -%}
 {%- endcall -%}
+
+<br><br><br><br><br>
 {% endblock %}

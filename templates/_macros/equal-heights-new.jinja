@@ -1,0 +1,138 @@
+# Params
+# is_description_full_width_on_desktop: whether description has its own row on
+#   desktop vs. 50/50 split between title/description
+# is_list_full_width_on_tablet: whether list title/description each have their
+#   own row on tablet vs. 50/50 split between title/description
+# Slots
+# title: top-level title element
+# description: top-level description element
+# list_item_title_[1-25]: title element of each child list item
+# list_item_description_[1-25]: description element of each child list item
+# cta: CTA block element
+{% macro equal_heights_new(
+  is_description_full_width_on_desktop=true,
+  is_list_full_width_on_tablet=true) -%}
+  {%- set title_content = caller('title') -%}
+  {%- set description_content = caller('description') -%}
+  {%- set has_description = description_content|trim|length > 0 -%}
+  {%- set cta_content = caller('cta') -%}
+  {%- set has_cta = cta_content|trim|length > 0 -%}
+
+  <style>
+    * {
+      border: 1px solid red;
+    }
+  </style>
+
+  <div class="u-fixed-width">
+    <div class="row--50-50-on-large">
+      <div class="col">
+        <h2>
+          Keep this heading to 2 lines on large screens.
+        </h2>
+      </div>
+
+      <div class="col">
+        <h5>
+          Ensure the right hand side of this 50/50 splite  is taller than the left hand side ( heading) on its left.
+        </h5>
+
+        <p>
+          Ensure this block is taller than the heading on its left. Cloud types vary depending on who owns or operates them. It is also possible to use more than one cloud at a time in a hybrid or multi-cloud architecture.Cloud types vary depending on who owns or operates them. It is also possible to use more than one cloud at a time in a hybrid or multi-cloud architecture.Cloud types vary depending on who owns or operates them. It is also possible to use more than one cloud at a time in a hybrid or multi-cloud architecture.
+        </p>
+      </div>
+    </div>
+
+    <div class="p-equal-height-row has-divider-3">
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-media-container">
+            <img width="320"
+              src="https://assets.ubuntu.com/v1/c4176cd9-Kernelt%20industries-80%201.jpg"
+              alt="" />
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <hr class='p-rule--highlight u-hide--medium u-hide--small'/>
+          <h5 class="p-heading--5">Continuous security</h5>
+        </div>
+        <p class="p-equal-height-row__item">
+          Imagine a world where every device is trustworthy. We designed every aspect of Ubuntu
+          Core to create the most secure embedded Linux ever, with a 10 year LTS commitment.
+        </p>
+        <div class="p-equal-height-row__item">
+          <a href="#">
+            <p>Learn more about Ubuntu security&nbsp;›</p>
+          </a>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-media-container">
+            <img width="320"
+              src="https://assets.ubuntu.com/v1/1624c652-Kernelt%20industries-80%201-1.jpg"
+              alt="" />
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <hr class='p-rule--highlight u-hide--medium u-hide--small'/>
+          <h5 class="p-heading--5">Fleet management</h5>
+        </div>
+        <p class="p-equal-height-row__item">
+          Enjoy reliable, remotely accessible and recoverable devices which are always
+          up-to-date with mission-critical OTA updates. In connected or air-gap environments.
+        </p>
+        <div class="p-equal-height-row__item">
+          <a href="#">
+            <p>Learn more about fleet management&nbsp;›</p>
+          </a>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-media-container">
+            <img width="320"
+              src="https://assets.ubuntu.com/v1/eb9824bf-Kernelt%20industries-80%201-2.jpg"
+              alt="" />
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <hr class='p-rule--highlight u-hide--medium u-hide--small'/>
+          <h5 class="p-heading--5">Agile containerisation</h5>
+        </div>
+        <p class="p-equal-height-row__item">
+          Ubuntu Core is immutable and strictly confined. There is a clean separation between
+          the kernel, OS image and applications, each updated independently and protected
+          against corruption.
+        </p>
+        <div class="p-equal-height-row__item">
+          <a href="#">
+            <p>Learn more about confinement&nbsp;›</p>
+          </a>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-media-container">
+            <img width="320"
+              src="https://assets.ubuntu.com/v1/000a7695-Kernelt%20industries-80%201-3.jpg"
+              alt="" />
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <hr class='p-rule--highlight u-hide--medium u-hide--small'/>
+          <h5 class="p-heading--5">A strong hardware ecosystem</h5>
+        </div>
+        <p class="p-equal-height-row__item">
+          We enable Ubuntu Core with the best ODMs and silicon vendors in the world. We
+          continuously test it on leading IoT and edge devices and hardware.
+        </p>
+        <div class="p-equal-height-row__item">
+          <a href="#">
+            <p>Browse all certified hardware&nbsp;›</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endmacro %}
