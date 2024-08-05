@@ -115,6 +115,8 @@
   subheadings:
     - title: Hero
       url: /docs/patterns/hero
+    - title: Equal height
+      url: /docs/patterns/equal-height-new
 - heading: Utilities
   ordering: alphabetical
   subheadings:
